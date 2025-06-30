@@ -3,7 +3,10 @@ import axios from 'axios';
 import Navbar from './components/Navbar';
 import './App.css';
 
-const API_URL = 'http://localhost:3001/api';
+const API_URL =
+  process.env.NODE_ENV === 'production'
+    ? process.env.REACT_APP_API_URL_PROD
+    : 'http://localhost:3001/api';
 
 function App() {
   const [message, setMessage] = useState('');
