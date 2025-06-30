@@ -1,7 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import path from "path";
 
 dotenv.config();
 
@@ -9,9 +8,68 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Middlewares
-app.use(express.static(path.join(process.cwd(), "public")));
 app.use(cors());
 app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send(`<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Servidor Activo</title>
+<style>
+  body {
+    background: #121212;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .indicator {
+    width: 80px;
+    height: 80px;
+    background: #4caf50;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #4caf50aa;
+    animation: pulse 2s infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 15px #4caf50aa;
+    }
+    50% {
+      transform: scale(1.2);
+      box-shadow: 0 0 30px #4caf50cc;
+    }
+  }
+
+  h1 {
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+  }
+
+  .checkmark {
+    color: #4caf50;
+    font-weight: bold;
+    margin-left: 8px;
+  }
+</style>
+</head>
+<body>
+  <div class="indicator"></div>
+  <h1>Servidor funcionando <span class="checkmark">✅</span></h1>
+</body>
+</html>`);
+});
 
 // Rutas
 app.get('/api/health', (req, res) => {
