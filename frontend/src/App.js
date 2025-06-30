@@ -5,7 +5,7 @@ import './App.css';
 
 const API_URL =
   process.env.NODE_ENV === 'production'
-    ? process.env.REACT_APP_API_URL_PROD
+    ? process.env.REACT_APP_API_URL
     : 'http://localhost:3001/api';
 
 function App() {
