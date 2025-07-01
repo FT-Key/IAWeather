@@ -66,9 +66,9 @@ function App() {
         const aiMessage = {
           id: Date.now() + 1,
           type: 'ai',
-          content: result.data.response,
-          timestamp: result.data.timestamp,
-          model: result.data.model,
+          content: result.data.data.response,
+          timestamp: result.data.data.timestamp,
+          model: result.data.data.model,
         };
 
         setConversation(prev => [...prev, aiMessage]);
