@@ -140,7 +140,7 @@ function App() {
             <div className="message message-ai">
               <div className="message-content" style={{ fontStyle: 'italic' }}>
                 <div className="message-header" style={{ color: '#007acc', fontWeight: 'bold', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <img className='appImg' src='logoKeyAI1-nobg.png' />
+                  <img className='appImg' src='logoKeyAI1-nobg.png' alt='Logo Key AI' />
                   Asistente IA</div>
                 <div>⏳ Escribiendo...</div>
               </div>
