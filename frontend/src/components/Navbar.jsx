@@ -1,5 +1,4 @@
 import '../css/Navbar.css';
-import FilteredImage from "./FilteredImage";
 
 function Navbar({ onClear }) {
   return (
