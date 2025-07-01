@@ -1,9 +1,10 @@
 import '../css/Navbar.css';
+import FilteredImage from "./FilteredImage";
 
 function Navbar({ onClear }) {
   return (
     <header className="App-header">
-      <h1>🤖 KeyAI</h1>
+      <img className='navImg' src="logoKeyAI1-nobg.png" alt="logoKeyAI" />
       <button onClick={onClear}>
         🗑️ Limpiar Chat
       </button>
